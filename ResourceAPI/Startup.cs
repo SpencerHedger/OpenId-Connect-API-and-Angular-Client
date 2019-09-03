@@ -32,11 +32,11 @@ namespace ResourceAPI
                 .AddJsonFormatters(); // For JSON output.
 
             services.AddAuthentication("Bearer") // Bearer token authentication.
-                .AddIdentityServerAuthentication(options =>
+                .AddJwtBearer("Bearer", options =>
                 {
-                    options.Authority = "http://localhost.5000"; // Location of Identity Provider.
-                    options.RequireHttpsMetadata = false; // Trusted internal network communication.
-                    options.ApiName = "resourceApi"; // This is the name of a resource on the Identity Provider.
+                    options.Authority = "https://localhost:5001"; // Location of Identity Provider.
+                    options.RequireHttpsMetadata = false;
+                    options.Audience = "resourceApi"; // This is the name of a resource on the Identity Provider.
                 });
         }
 
@@ -54,6 +54,7 @@ namespace ResourceAPI
             }
 
             app.UseHttpsRedirection();
+            app.UseAuthentication();
             app.UseMvc();
         }
     }
