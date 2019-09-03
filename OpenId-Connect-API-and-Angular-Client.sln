@@ -1,23 +1,11 @@
 
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IdentityProvider", "IdentityProvider\IdentityProvider.csproj", "{1158A22E-2057-4495-ACCF-F3DCACCD0DC5}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IdentityProvider.Tests", "IdentityProvider.Tests\IdentityProvider.Tests.csproj", "{EB64BA1B-FFE2-4AED-8FDC-05CA54801A59}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{1158A22E-2057-4495-ACCF-F3DCACCD0DC5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{1158A22E-2057-4495-ACCF-F3DCACCD0DC5}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{1158A22E-2057-4495-ACCF-F3DCACCD0DC5}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{1158A22E-2057-4495-ACCF-F3DCACCD0DC5}.Release|Any CPU.Build.0 = Release|Any CPU
-		{EB64BA1B-FFE2-4AED-8FDC-05CA54801A59}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{EB64BA1B-FFE2-4AED-8FDC-05CA54801A59}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{EB64BA1B-FFE2-4AED-8FDC-05CA54801A59}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{EB64BA1B-FFE2-4AED-8FDC-05CA54801A59}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
