@@ -19,7 +19,6 @@
     },
     "ResourceAPI": {
       "commandName": "Project",
-      "launchBrowser": false,
       "launchUrl": "api/values",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
