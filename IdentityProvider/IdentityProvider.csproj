@@ -11,6 +11,7 @@
       <Publish Condition="'%(PackageReference.Version)' == ''">true</Publish>
     </PackageReference>
     <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.2.0" PrivateAssets="All" />
+    <PackageReference Include="IdentityServer4" Version="2.5.3" />
   </ItemGroup>
 
 </Project>
