@@ -11,10 +11,10 @@ namespace ClientApp.Controllers
     {
         public async Task<IActionResult> Index()
         {
-            var client = new HttpClient();
+            HttpClient client = new HttpClient();
 
             // Discover endpoints from metadata.
-            var oidcDiscoveryResult = await client.GetDiscoveryDocumentAsync("http://localhost:5000");
+            var oidcDiscoveryResult = await client.GetDiscoveryDocumentAsync("https://localhost:5001");
             if (oidcDiscoveryResult.IsError)
             {
                 Console.WriteLine(oidcDiscoveryResult.Error);
@@ -42,7 +42,7 @@ namespace ClientApp.Controllers
 
             // Call the resource API with the access token obtained from IdentityProvider.
             client.SetBearerToken(tokenResponse.AccessToken);
-            var response = await client.GetAsync("http://localhost:5001/identity");
+            var response = await client.GetAsync("https://localhost:5002/identity");
             if (!response.IsSuccessStatusCode)
             {
                 Console.WriteLine(response.StatusCode);
