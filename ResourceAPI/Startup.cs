@@ -26,6 +26,18 @@ namespace ResourceAPI
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+
+            services.AddMvcCore()
+                .AddAuthorization() // Enable protection of resources with "Authorized" attribute.
+                .AddJsonFormatters(); // For JSON output.
+
+            services.AddAuthentication("Bearer") // Bearer token authentication.
+                .AddIdentityServerAuthentication(options =>
+                {
+                    options.Authority = "http://localhost.5000"; // Location of Identity Provider.
+                    options.RequireHttpsMetadata = false; // Trusted internal network communication.
+                    options.ApiName = "resourceApi"; // This is the name of a resource on the Identity Provider.
+                });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
