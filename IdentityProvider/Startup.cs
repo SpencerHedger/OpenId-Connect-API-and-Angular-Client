@@ -15,6 +15,10 @@ namespace IdentityProvider
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddIdentityServer()
+                .AddDeveloperSigningCredential()
+                .AddInMemoryApiResources(Config.GetApiResources()) // Get the resources from Config
+                .AddInMemoryClients(Config.GetClients()); // Get the clients from Config
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -25,10 +29,7 @@ namespace IdentityProvider
                 app.UseDeveloperExceptionPage();
             }
 
-            app.Run(async (context) =>
-            {
-                await context.Response.WriteAsync("Hello World!");
-            });
+            app.UseIdentityServer(); // Add the IdentityServer middleware.
         }
     }
 }
