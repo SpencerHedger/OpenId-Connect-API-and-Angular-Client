@@ -36,7 +36,7 @@ namespace ResourceAPI
                 {
                     options.Authority = "https://localhost:5001"; // Location of Identity Provider.
                     options.RequireHttpsMetadata = false;
-                    options.Audience = "resourceApi"; // This is the name of a resource on the Identity Provider.
+                    options.Audience = "resapi"; // This is the name of a resource on the Identity Provider.
                 });
         }
 

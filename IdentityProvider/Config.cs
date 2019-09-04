@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using IdentityModel;
 using IdentityServer4.Models;
 
 namespace IdentityProvider
@@ -10,7 +11,25 @@ namespace IdentityProvider
         {
             return new List<ApiResource>
             {
-                new ApiResource("resourceApi", "API Application")
+                new ApiResource
+                {
+                    Name = "resapi",
+
+                    // This API defines two scopes.
+                    Scopes =
+                    {
+                        new Scope()
+                        {
+                            Name = "resapi.full_access",
+                            DisplayName = "Full access to Resource API",
+                        },
+                        new Scope
+                        {
+                            Name = "resapi.read_only",
+                            DisplayName = "Read only access to Resource API"
+                        }
+                    }
+                }
             };
         }
 
@@ -31,7 +50,7 @@ namespace IdentityProvider
                         new Secret("secret".Sha256())
                     },
 
-                    AllowedScopes = { "resourceApi" }
+                    AllowedScopes = { "resapi.read_only" }
                 }
             };
         }

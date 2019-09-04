@@ -28,8 +28,9 @@ namespace ClientApp.Controllers
 
                 ClientId = "clientApp",
                 ClientSecret = "secret",
-                Scope = "resourceApi"
+                Scope = "resapi.read_only"
             });
+
 
             if (tokenResponse.IsError)
             {
